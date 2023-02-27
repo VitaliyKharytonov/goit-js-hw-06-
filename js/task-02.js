@@ -10,12 +10,13 @@ const ingredients = [
 const list = document.querySelector("#ingredients");
 
 const listItem = ingredients.map((name) => {
-  `<li class="item">${name}</li>`;
   const item = document.createElement("li");
   item.textContent = name;
-  item.classList = "item";
+  item.classList.add("item");
+  return item;
 });
-list.append([...listItem]);
+list.append(...listItem);
+
 // const listItem = ingredients
 //   .map((name) => `<li class="item">${name}</li>`)
 //   .join("");
